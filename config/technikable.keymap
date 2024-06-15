@@ -1,0 +1,69 @@
+/*
+ * Copyright (c) 2022 Pete Johanson
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+
+#define BAS_L 0
+#define NAV_L 1
+#define NUM_L 2
+#define SYM_L 3
+
+// Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
+
+&lt { quick_tap_ms = <200>; };
+
+/ {
+    chosen { zmk,matrix_transform = &mit_transform; };
+
+    conditional_layers { compatible = "zmk,conditional-layers"; };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        base_layer {
+            label = "Base";
+            bindings = <
+&kp ESC         &kp Q  &kp W         &kp E         &kp R  &kp T          &kp Y  &kp U          &kp I          &kp O    &kp P     &kp BACKSPACE
+&mt TAB LCTRL   &kp A  &kp S         &kp D         &kp F  &kp G          &kp H  &kp J          &kp K          &kp L    &kp SEMI  &kp ENTER
+&kp LEFT_SHIFT  &kp Z  &kp X         &kp C         &kp V  &kp B          &kp N  &kp M          &kp COMMA      &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
+                       &kp LEFT_ALT  &kp LEFT_GUI  &to 1  &lt 3 SPACE    &to 2  &kp RIGHT_GUI  &kp RIGHT_ALT
+            >;
+        };
+
+        nav_layer {
+            label = "Nav";
+            bindings = <
+&bt BT_CLR    &trans        &trans        &trans        &trans        &trans          &trans  &trans          &trans          &trans        &trans           &kp DEL
+&out OUT_TOG  &trans        &trans        &trans        &trans        &trans          &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans
+&trans        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &kp HOME        &kp PG_DN       &kp PG_UP     &kp END          &trans
+                            &trans        &trans        &trans        &trans          &trans  &trans          &trans
+            >;
+        };
+
+        num_layer {
+            label = "Num";
+            bindings = <
+&kp F1         &kp F2            &kp F3            &kp F4            &kp F5            &kp F6              &kp F7            &kp F8            &kp F9            &kp F10           &kp F11           &kp F12
+&kp LS(EQUAL)  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(NUMBER_5)    &kp LS(NUMBER_6)  &kp LS(NUMBER_7)  &kp LS(NUMBER_8)  &kp LS(NUMBER_9)  &kp LS(NUMBER_0)  &kp LS(MINUS)
+&kp EQUAL      &kp NUMBER_1      &kp NUMBER_2      &kp NUMBER_3      &kp NUMBER_4      &kp NUMBER_5        &kp NUMBER_6      &kp NUMBER_7      &kp NUMBER_8      &kp NUMBER_9      &kp NUMBER_0      &kp MINUS
+                                 &kp GRAVE         &trans            &trans            &trans              &trans            &trans            &kp TILDE
+            >;
+        };
+
+        sym_layer {
+            label = "Sym";
+            bindings = <
+&trans  &trans  &kp LS(LG(LEFT_ARROW))  &kp LG(UP_ARROW)  &kp LS(LG(RIGHT_ARROW))  &kp C_MUTE           &kp C_PREVIOUS    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LG(LEFT_ARROW)      &kp LG(DOWN)      &kp LG(RIGHT_ARROW)      &kp C_VOLUME_UP      &kp C_PLAY_PAUSE  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans                  &trans            &trans                   &kp C_VOLUME_DOWN    &kp C_NEXT        &trans  &trans  &trans  &trans  &trans
+                &trans                  &trans            &trans                   &trans               &trans            &trans  &trans
+            >;
+        };
+    };
+};
