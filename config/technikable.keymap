@@ -23,6 +23,42 @@
 
     conditional_layers { compatible = "zmk,conditional-layers"; };
 
+    combos {
+        compatible = "zmk,combos";
+
+        lbkt {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <3 4>;
+        };
+
+        rbkt {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <7 8>;
+        };
+
+        quot {
+            bindings = <&kp SINGLE_QUOTE>;
+            key-positions = <15 16>;
+        };
+
+        bsl {
+            bindings = <&kp BACKSLASH>;
+            key-positions = <19 20>;
+        };
+
+        nubs {
+            bindings = <&kp NUBS>;
+            key-positions = <27 28>;
+            layers = <3>;
+        };
+
+        nuhs {
+            bindings = <&kp NUHS>;
+            key-positions = <31 32>;
+            layers = <3>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
