@@ -75,30 +75,30 @@
         nav_layer {
             label = "Nav";
             bindings = <
-&bt BT_CLR    &trans        &trans        &trans        &trans        &trans    &trans          &trans     &trans        &trans     &trans  &kp DEL
-&out OUT_TOG  &trans        &trans        &trans        &trans        &trans    &kp LEFT_ARROW  &kp DOWN   &kp UP_ARROW  &kp RIGHT  &trans  &trans
-&trans        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &trans    &kp HOME        &kp PG_DN  &kp PG_UP     &kp END    &trans  &trans
-                            &trans        &trans        &trans        &trans    &trans          &trans     &trans
+&trans  &trans  &kp LG(LS(LEFT))  &kp LG(UP)    &kp LG(LS(RIGHT))  &kp LC(EQUAL)    &kp HOME        &kp PG_DN  &kp PAGE_UP    &kp END        &trans  &kp DEL
+&trans  &trans  &kp LG(LEFT)      &kp LG(DOWN)  &kp LG(RIGHT)      &kp LC(N0)       &kp LEFT_ARROW  &kp DOWN   &kp UP_ARROW   &kp RIGHT      &trans  &trans
+&trans  &trans  &kp LC(X)         &kp LC(C)     &kp LC(V)          &kp LC(MINUS)    &kp LC(LEFT)    &trans     &kp LG(LS(S))  &kp LC(RIGHT)  &trans  &trans
+                &trans            &trans        &trans             &trans           &trans          &trans     &trans
             >;
         };
 
         num_layer {
             label = "Num";
             bindings = <
-&kp F1         &kp F2            &kp F3            &kp F4            &kp F5            &kp F6              &kp F7            &kp F8            &kp F9            &kp F10           &kp F11           &kp F12
-&kp LS(EQUAL)  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(NUMBER_5)    &kp LS(NUMBER_6)  &kp LS(NUMBER_7)  &kp LS(NUMBER_8)  &kp LS(NUMBER_9)  &kp LS(NUMBER_0)  &kp LS(MINUS)
-&kp EQUAL      &kp NUMBER_1      &kp NUMBER_2      &kp NUMBER_3      &kp NUMBER_4      &kp NUMBER_5        &kp NUMBER_6      &kp NUMBER_7      &kp NUMBER_8      &kp NUMBER_9      &kp NUMBER_0      &kp MINUS
-                                 &kp GRAVE         &trans            &trans            &trans              &trans            &trans            &kp TILDE
+&kp F1     &kp F2        &kp F3        &kp F4        &kp F5        &kp F6          &kp F7        &kp F8        &kp F9        &kp F10               &kp F11                &kp F12
+&kp PLUS   &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PERCENT     &kp CARET     &kp AMPS      &kp ASTRK     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDER
+&kp EQUAL  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9          &kp NUMBER_0           &kp MINUS
+                         &kp GRAVE     &trans        &trans        &trans          &trans        &trans        &kp TILDE
             >;
         };
 
         sym_layer {
             label = "Sym";
             bindings = <
-&trans  &trans  &kp LS(LG(LEFT_ARROW))  &kp LG(UP_ARROW)  &kp LS(LG(RIGHT_ARROW))  &kp C_MUTE           &kp C_PREVIOUS    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LG(LEFT_ARROW)      &kp LG(DOWN)      &kp LG(RIGHT_ARROW)      &kp C_VOLUME_UP      &kp C_PLAY_PAUSE  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans                  &trans            &trans                   &kp C_VOLUME_DOWN    &kp C_NEXT        &trans  &trans  &trans  &trans  &trans
-                &trans                  &trans            &trans                   &trans               &trans            &trans  &trans
+&bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &kp C_MUTE           &kp C_PREVIOUS    &trans  &trans  &trans  &trans  &trans
+&out OUT_TOG  &trans        &trans        &trans        &trans        &kp C_VOLUME_UP      &kp C_PLAY_PAUSE  &trans  &trans  &trans  &trans  &trans
+&trans        &trans        &trans        &trans        &trans        &kp C_VOLUME_DOWN    &kp C_NEXT        &trans  &trans  &trans  &trans  &trans
+                            &trans        &trans        &trans        &trans               &trans            &trans  &trans
             >;
         };
     };
