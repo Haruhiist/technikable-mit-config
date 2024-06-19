@@ -45,6 +45,11 @@
             bindings = <&kp BACKSLASH>;
             key-positions = <19 20>;
         };
+
+        caps_word {
+            bindings = <&caps_word>;
+            key-positions = <12 13>;
+        };
     };
 
     behaviors {
@@ -75,6 +80,16 @@
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 42>;
             hold-trigger-on-release;
         };
+
+        bs_del: bs_del {
+            compatible = "zmk,behavior-mod-morph";
+            label = "Backspace to Delete";
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT|MOD_LSFT)>;
+            keep-mods = <(MOD_RSFT)>;
+        };
     };
 
     keymap {
@@ -83,7 +98,7 @@
         base_layer {
             label = "Base";
             bindings = <
-&kp ESCAPE      &kp Q            &kp W            &kp E         &kp R              &kp T          &kp Y        &kp U               &kp I          &kp O             &kp P                     &kp BACKSPACE
+&kp ESCAPE      &kp Q            &kp W            &kp E         &kp R              &kp T          &kp Y        &kp U               &kp I          &kp O             &kp P                     &bs_del
 &mt LCTRL TAB   &hml LEFT_GUI A  &hml LEFT_ALT S  &hml LCTRL D  &hml LEFT_SHIFT F  &kp G          &kp H        &hmr RIGHT_SHIFT J  &hmr RCTRL K   &hmr RIGHT_ALT L  &hmr RIGHT_GUI SEMICOLON  &kp ENTER
 &kp LEFT_SHIFT  &kp Z            &kp X            &kp C         &kp V              &kp B          &kp N        &kp M               &kp COMMA      &kp DOT           &kp FSLH                  &kp RIGHT_SHIFT
                                  &kp LALT         &kp LEFT_GUI  &lt 1 GRAVE        &lt 3 SPACE    &lt 2 TILDE  &kp RIGHT_GUI       &kp RIGHT_ALT
