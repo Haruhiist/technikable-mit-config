@@ -16,8 +16,6 @@
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 
-&lt { quick_tap_ms = <200>; };
-
 / {
     chosen { zmk,matrix_transform = &mit_transform; };
 
@@ -29,26 +27,31 @@
         lbkt {
             bindings = <&kp LEFT_BRACKET>;
             key-positions = <3 4>;
+            layers = <0>;
         };
 
         rbkt {
             bindings = <&kp RIGHT_BRACKET>;
             key-positions = <7 8>;
+            layers = <0>;
         };
 
         quot {
             bindings = <&kp SINGLE_QUOTE>;
             key-positions = <15 16>;
+            layers = <0>;
         };
 
         bsl {
             bindings = <&kp BACKSLASH>;
             key-positions = <19 20>;
+            layers = <0>;
         };
 
         caps_word {
             bindings = <&caps_word>;
             key-positions = <12 13>;
+            layers = <0>;
         };
     };
 
