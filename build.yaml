@@ -18,5 +18,8 @@
 #
 ---
 include:
-  - board: technikable
+  #  I don't have v1 technikable
+  #  thus removing it from build
+  #  to reduce build times
+  #  - board: technikable
   - board: technikable@1.1
